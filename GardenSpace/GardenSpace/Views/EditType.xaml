@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GardenSpace.EditType">
+    <StackLayout>
+        <Label FontSize="20" Text="Существующие типы садов:"
+                   HorizontalOptions="CenterAndExpand"/>
+        <CollectionView Margin="10" ItemsSource="{Binding GardenTypes}" ItemsLayout="VerticalGrid, 2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <ImageButton Margin="10" HeightRequest="100" WidthRequest="200" CornerRadius="30" Source="Type.png" Clicked="GoEditType"/>
+                        <Label HorizontalTextAlignment="Center" FontSize="18" Text="{Binding Title}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Добавить новий" Clicked="GoAddNewType"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GardenSpace"
+             x:Class="GardenSpace.ShellPage"
+       Shell.BackgroundColor="LightSeaGreen"
+       Shell.TitleColor="AntiqueWhite">
+    
+    <FlyoutItem Title="Сады">
+        <ShellContent
+        Title="Цветочный сад"
+        Route="FlowerGarden"
+        ContentTemplate="{DataTemplate local:FlowerGardens}"/>
+        <ShellContent
+        Title="Фруктовый сад"
+        Route="FruitGarden"
+        ContentTemplate="{DataTemplate local:FruitGardens}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Админ-панель (Сады)">
+        <ShellContent
+            Title="Редактирование"
+            Route="EditGarden"
+            ContentTemplate="{DataTemplate local:EditGarden}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Админ-панель (Растения)">
+        <ShellContent
+            Title="Редактирование"
+            Route="EditPlant"
+            ContentTemplate="{DataTemplate local:EditPlant}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Админ-панель (Типы садов)">
+        <ShellContent
+        Title="Редактирование"
+        Route="EditType"
+        ContentTemplate="{DataTemplate local:EditType}"/>
+    </FlyoutItem>
+</Shell>

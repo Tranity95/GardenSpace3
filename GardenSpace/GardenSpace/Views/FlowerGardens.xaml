@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GardenSpace.FlowerGardens">
+    <StackLayout>
+        <StackLayout>
+            <Label FontSize="20" Text="Выберите сад:"
+        HorizontalOptions="CenterAndExpand"/>
+            <CollectionView Margin="10" ItemsSource="{Binding Gardens}" ItemsLayout="VerticalGrid, 2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <ImageButton Margin="10" HeightRequest="100" WidthRequest="200" CornerRadius="30" Source="{Binding ImagePath}" Clicked="GoGarden"/>
+                            <Label TextColor="Black" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding Name}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

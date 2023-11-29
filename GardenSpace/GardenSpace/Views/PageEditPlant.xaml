@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GardenSpace.PageEditPlant">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label TextColor="Black" Text="Название растения:"/>
+            <Entry TextColor="Black" Text="{Binding SelectedPlant.Title}"/>
+
+            <Label TextColor="Black" Text="Путь к картинке:"/>
+            <Entry TextColor="Black" Text="{Binding SelectedPlant.ImagePath}"/>
+
+            <Label TextColor="Black" Text="Тип растения:"/>
+            <Entry TextColor="Black" Text="{Binding SelectedPlant.Type}"/>
+
+            <Label TextColor="Black" Text="Сад, в котором растение находится:"/>
+            <Picker TextColor="Black" ItemsSource="{Binding Gardens}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedGarden}"/>
+            
+            <Button Text="Сохранить" Clicked="Update"/>
+            <Button Text="Удалить растение" Clicked="Delete"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

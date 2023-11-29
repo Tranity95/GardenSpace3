@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GardenSpace.ViewModels"
+             x:Class="GardenSpace.Adding"
+             BindingContext="{DynamicResource viewModel}">
+    <ContentPage.Resources>
+        <viewmodel:AddingViewModel x:Key="viewModel"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label TextColor="Black" Text="Название сада:"/>
+            <Entry TextColor="Black" Text="{Binding Name}"/>
+
+            <Label TextColor="Black" Text="Укажите путь к картинке:"/>
+            <Entry TextColor="Black" Text="{Binding ImagePath}"/>
+
+            <Label TextColor="Black" Text="Тип сада:"/>
+            <Picker TextColor="Black" ItemsSource="{Binding GardenTypes}" ItemDisplayBinding="{Binding Title}" SelectedItem="{Binding SelectedGardenType}"/>
+            
+            <Button Text="Добавить" Clicked="AddGarden"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GardenSpace.ViewModels"
+             x:Class="GardenSpace.EditGarden"
+             BindingContext="{DynamicResource viewModel}">
+    <ContentPage.Resources>
+        <viewmodel:AddingPlantViewModel x:Key="viewModel"/>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label FontSize="20" Text="Выберите сад для редактирования:"
+    HorizontalOptions="CenterAndExpand"/>
+        <CollectionView Margin="10" ItemsSource="{Binding Gardens}" ItemsLayout="VerticalGrid, 2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <ImageButton Margin="10" HeightRequest="100" WidthRequest="200" CornerRadius="30" Source="{Binding ImagePath}" Clicked="GoEditGarden"/>
+                        <Label TextColor="Black" HorizontalTextAlignment="Center" FontSize="18" Text="{Binding Name}"/>
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Добавить новый" Clicked="GoAddGarden"/>
+    </StackLayout>
+</ContentPage>
