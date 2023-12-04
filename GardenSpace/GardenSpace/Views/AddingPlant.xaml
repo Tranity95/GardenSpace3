@@ -17,7 +17,7 @@
         <Label Text="В каком саду он будет:"/>
         <Picker ItemsSource="{Binding Gardens}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedGarden}"/>
 
-        <Button Text="Добавить" Clicked="AddPlant"/>
+        <Button Text="Добавить" />
         
     </StackLayout>
 </ContentPage>

@@ -11,7 +11,7 @@
         <Label Text="Название типа:"/>
         <Entry Text="{Binding Title}"/>
 
-        <Button Text="Добавить" Clicked="AddType"/>
+        <Button Text="Добавить"/>
 
     </StackLayout>
 </ContentPage>

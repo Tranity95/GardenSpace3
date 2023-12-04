@@ -18,7 +18,7 @@
             <Label TextColor="Black" Text="Тип сада:"/>
             <Picker TextColor="Black" ItemsSource="{Binding GardenTypes}" ItemDisplayBinding="{Binding Title}" SelectedItem="{Binding SelectedGardenType}"/>
             
-            <Button Text="Добавить" Clicked="AddGarden"/>
+            <Button Text="Добавить" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -16,18 +16,6 @@ namespace GardenSpace
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditGarden : ContentPage, INotifyPropertyChanged
     {
-        private List<Garden> gardens = new List<Garden>();
-
-        public List<Garden> Gardens 
-        { 
-            get => gardens;
-            set 
-            { 
-                gardens = value; 
-                OnPropertyChanged();
-
-            } 
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -50,17 +38,6 @@ namespace GardenSpace
         {
             Adding addingPage = new Adding();
             await Navigation.PushAsync(addingPage);
-        }
-
-        protected override void OnAppearing()
-        {
-            Gardens = new List<Garden>();
-            Gardens = DBInstance.GetInstance().GetAllGardens();
-        }
-
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }
